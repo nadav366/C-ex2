@@ -1,0 +1,66 @@
+c_ex2
+nadav366
+205457534
+######
+
+Data structures-
+I have defined two structures -
+* Node, represents one vertex in the tree and contains its value, an array of pointers to all
+  neighbors (including the father), the number of neighbors. And for the purposes of the algorithms
+  during the software - a pointer to a previous vertex, distance, and whether there is a father.
+* Graph-represents the entire graph. Contains an array of all vertices in the tree, points to the
+  vertex, the number of ribs, and the number of vertices.
+  I have configured functions to initialize the graph and release it.
+
+*************************************************
+Software structure-
+The software is divided into three parts -
+- Input processing and graph construction
+- Check that the graph is a tree
+- Calculate and print all data.
+
+Part One-
+I built two auxiliary functions-
+* Reading a line from the file (I then learned that there is a function that does it, but I wanted
+    to practice myself)
+* Reading a number from a string.
+* A function that creates all all vertices.
+* A function that initializes and fills a specific vertex.
+
+Second part-
+I checked that the graph is a tree by making sure that there is exactly one side less than the
+number of vertices, no vertex with more than one parent, there is only one root and the
+ graph is Ties.
+
+third part-
+The number of vertices, the number of ribs, and the root vertex must be saved in the graph object,
+after construction.
+The minimum and maximum can be calculated with the help of BFS running from the tree root, then
+searching the largest distance, and the smallest of the leaves in the tree.
+After running the first BFS you can run again, from the farther vertex and then the kismal distance
+from it, is the diameter of the tree.
+For the minimum path, I ran BFS with a search from the root to the target, so you can go back to the
+previous vertex in the search and find the minimum path.
+
+*************************************************
+Exercise Details-
+I used two well-known algorithms -
+* explor- To recursively pass all vertices from the root vertex and check if the graph is Ties.
+* BFS - to move across all vertices in the graph, starting with a particular codec, searching for
+  distances or a specific vertex.
+
+*************************************************
+Running times-
+* Check if it is wood-
+    Single root and non-vertex having two ancestors - O(|V|)
+    Tying Test - O(|V|+|E|)
+    Total - O(|V|+|E|)
+
+* Finding the amount of ribs-
+    during construction we sum the number of ribs and so the calculation is- O(1)
+
+* Finding the Tree Root-
+  We go through all the vertices once - O(|V|)
+
+* Finding the path-
+    BFS run- O(|V|+|E|) in Tree- O(|V|)
